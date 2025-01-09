@@ -3,6 +3,11 @@ from flask import Flask, request, render_template,jsonify
 from PIL import Image
 import numpy as np
 import skin_cancer_detection as SCD
+from tensorflow.keras.models import load_model
+
+# Load model globally
+model = load_model('./best_model.h5')
+
 
 app = Flask(__name__)
 
@@ -25,7 +30,7 @@ def show():
     inputimg = Image.open(pic)
     inputimg = inputimg.resize((28, 28))
     img = np.array(inputimg).reshape(-1, 28, 28, 3)
-    result = SCD.model.predict(img)
+    result = model.predict(img)
 
     result = result.tolist()
     print(result)
