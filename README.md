@@ -8,7 +8,7 @@ This project leverages deep learning (CNN) to detect skin cancer from images and
 - Accuracy of XX% on test data.
 
 ## Installation and Usage
-   git clone https://github.com/yourusername/Skin-Cancer-Detection.git
+   git clone https://github.com/rohanvij05/Skin-Cancer-Detection.git
    
    cd Skin-Cancer-Detection
    
