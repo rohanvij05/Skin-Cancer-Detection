@@ -28,7 +28,7 @@ medical info, and safety advice.
 - Flask web server to handle inputs and predictions.
 - Simple and user-friendly frontend (HTML templates).
 - Ready for mobile extension in the future.
-Project Structure
+### Project Structure
 graphql
 Copy
 Edit
@@ -43,6 +43,24 @@ Skin-Cancer-Detection/
 │   ├── results.html          # Result page after prediction
 │   └── index.html            # Risk prediction interface
 └── README.md                 # Project documentation
+
+### Variables Used
+
+Variable Name	Description
+pic	Uploaded image file from user
+inputimg	PIL image object loaded for resizing
+img	NumPy array of shape (1, 28, 28, 3) used for prediction
+SCD.model	CNN model loaded from model.h5
+SCD.classes	List of 7 skin cancer class names
+class_ind	Index of predicted class with max probability
+result	Predicted class name (string)
+info	Textual medical description mapped to the predicted class
+risk_score	Score (out of 15) from user input risk assessment
+risk_percentage	Final risk percentage for skin cancer
+risk_level	Level as Low / Moderate / High
+suggestion	AI-generated safety or health advice based on user's risk level
+
+
 ### Tech Stack
 - Python 3.x
 - Flask
