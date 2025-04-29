@@ -28,37 +28,25 @@ medical info, and safety advice.
 - Flask web server to handle inputs and predictions.
 - Simple and user-friendly frontend (HTML templates).
 - Ready for mobile extension in the future.
+
 ### Project Structure
-graphql
-Copy
-Edit
-Skin-Cancer-Detection/
-├── app.py                    # Main Flask app
-├── wsgi.py                   # WSGI entry point for deployment
-├── skin_cancer_detection.py  # CNN model loading + class definitions
-├── model.h5                  # Trained model file
-├── requirements.txt          # Dependencies
-├── templates/
-│   ├── home.html             # Upload image interface
-│   ├── results.html          # Result page after prediction
-│   └── index.html            # Risk prediction interface
-└── README.md                 # Project documentation
+<pre> Skin-Cancer-Detection/ ├── app.py # Main Flask app ├── wsgi.py # WSGI entry point for deployment ├── skin_cancer_detection.py # CNN model logic + class mappings ├── model.h5 # Trained CNN model ├── requirements.txt # Python dependencies ├── templates/ │ ├── home.html # Upload image page │ ├── results.html # Prediction result page │ └── index.html # Risk prediction form └── README.md # Project documentation </pre>
 
 ### Variables Used
 
 Variable Name	Description
 pic	Uploaded image file from user
-inputimg	PIL image object loaded for resizing
-img	NumPy array of shape (1, 28, 28, 3) used for prediction
+inputimg	PIL image object used for preprocessing
+img	NumPy array of shape (1, 28, 28, 3) for prediction
 SCD.model	CNN model loaded from model.h5
-SCD.classes	List of 7 skin cancer class names
+SCD.classes	List of class labels (AKIEC, BCC, BKL, etc.)
 class_ind	Index of predicted class with max probability
-result	Predicted class name (string)
-info	Textual medical description mapped to the predicted class
-risk_score	Score (out of 15) from user input risk assessment
-risk_percentage	Final risk percentage for skin cancer
-risk_level	Level as Low / Moderate / High
-suggestion	AI-generated safety or health advice based on user's risk level
+result	Final predicted class name
+info	Description of the detected skin disease
+risk_score	Total score based on user risk input
+risk_percentage	Risk percent based on score
+risk_level	Risk category: Low / Moderate / High
+suggestion	AI-generated advice based on risk level
 
 
 ### Tech Stack
