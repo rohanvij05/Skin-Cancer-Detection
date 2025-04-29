@@ -28,34 +28,21 @@ medical info, and safety advice.
 - Flask web server to handle inputs and predictions.
 - Simple and user-friendly frontend (HTML templates).
 - Ready for mobile extension in the future.
-### Variables Used
-| Variable Name
-| Description |
-|---------------------|-------------|
-| `pic`
-| Uploaded image file from user |
-| `inputimg`
-| Image loaded via PIL for preprocessing |
-| `img`
-| Numpy array of resized image (28x28x3) |
-| `SCD.model`
-| Loaded trained CNN model |
-| `SCD.classes`
-| List of skin cancer class labels |
-| `class_ind`
-| Index of predicted class |
-| `result`
-| Final predicted skin cancer class |
-| `info`
-| Medical information string based on class_ind |
-| `risk_score`
-| Numerical score from risk calculator |
-| `risk_percentage`
-| Risk in % calculated from total score |
-| `risk_level`
-| Risk level string ("High", "Moderate", "Low") |
-| `suggestion`
-| Personalized safety/medical advice |
+Project Structure
+graphql
+Copy
+Edit
+Skin-Cancer-Detection/
+├── app.py                    # Main Flask app
+├── wsgi.py                   # WSGI entry point for deployment
+├── skin_cancer_detection.py  # CNN model loading + class definitions
+├── model.h5                  # Trained model file
+├── requirements.txt          # Dependencies
+├── templates/
+│   ├── home.html             # Upload image interface
+│   ├── results.html          # Result page after prediction
+│   └── index.html            # Risk prediction interface
+└── README.md                 # Project documentation
 ### Tech Stack
 - Python 3.x
 - Flask
@@ -64,44 +51,7 @@ medical info, and safety advice.
 - PIL (Image Processing)
 - HTML / Jinja2 Templates
 - JavaScript (for risk module interaction)
-### Folder Structure
-```
-Skin-Cancer-Detection/
-├── app.py
-├── skin_cancer_detection.py
-├── model.h5
-├── wsgi.py
-├── templates/
-#
-#
-#
-#
-Main Flask application
-CNN model + class labels
-Trained CNN model file
-Entry point for deployment servers (Gunicorn, etc.)File: Untitled Document 1
-│
-│
-│
-├──
-└──
-```
-├── home.html
-├── results.html
-└── index.html
-requirements.txt
-README.md
-Page 2 of 2
-#
-#
-#
-#
-#
-Upload form
-Output display
-Risk calculator page
-Dependencies list
-Project documentation
+
 ### Compilation, Execution & Hardware/Software Requirements
 1. **Install Python 3.7+** and all dependencies:
 ```bash
