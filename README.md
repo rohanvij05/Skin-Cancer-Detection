@@ -28,25 +28,29 @@ medical info, and safety advice.
 - Flask web server to handle inputs and predictions.
 - Simple and user-friendly frontend (HTML templates).
 - Ready for mobile extension in the future.
-
 ### Project Structure
-<pre> Skin-Cancer-Detection/ ├── app.py # Main Flask app ├── wsgi.py # WSGI entry point for deployment ├── skin_cancer_detection.py # CNN model logic + class mappings ├── model.h5 # Trained CNN model ├── requirements.txt # Python dependencies ├── templates/ │ ├── home.html # Upload image page │ ├── results.html # Prediction result page │ └── index.html # Risk prediction form └── README.md # Project documentation </pre>
+Skin-Cancer-Detection/ ├── app.py # Main Flask app ├── wsgi.py # WSGI entry point for deployment ├── skin_cancer_detection.py # CNN model logic + class mappings ├── model.h5 # Trained CNN model ├── requirements.txt # Python dependencies ├── templates/ │ ├── home.html # Upload image page │ ├── results.html # Prediction result page │ └── index.html # Risk prediction form └── README.md # Project documentation
+
+
+---
 
 ### Variables Used
 
-Variable Name	Description
-pic	Uploaded image file from user
-inputimg	PIL image object used for preprocessing
-img	NumPy array of shape (1, 28, 28, 3) for prediction
-SCD.model	CNN model loaded from model.h5
-SCD.classes	List of class labels (AKIEC, BCC, BKL, etc.)
-class_ind	Index of predicted class with max probability
-result	Final predicted class name
-info	Description of the detected skin disease
-risk_score	Total score based on user risk input
-risk_percentage	Risk percent based on score
-risk_level	Risk category: Low / Moderate / High
-suggestion	AI-generated advice based on risk level
+| **Variable Name**   | **Description** |
+|---------------------|-----------------|
+| `pic`               | Uploaded image file from user |
+| `inputimg`          | PIL image object used for preprocessing |
+| `img`               | NumPy array of shape (1, 28, 28, 3) for prediction |
+| `SCD.model`         | CNN model loaded from `model.h5` |
+| `SCD.classes`       | List of class labels (AKIEC, BCC, BKL, etc.) |
+| `class_ind`         | Index of predicted class with max probability |
+| `result`            | Final predicted class name |
+| `info`              | Description of the detected skin disease |
+| `risk_score`        | Total score based on user risk input |
+| `risk_percentage`   | Risk percent based on score |
+| `risk_level`        | Risk category: Low / Moderate / High |
+| `suggestion`        | AI-generated advice based on risk level |
+
 
 
 ### Tech Stack
